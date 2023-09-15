@@ -17,7 +17,12 @@ app.get("/", (request, response) =>
 );
 
 io.on("connection", (socket) => {
-    console.log("a user connected");
+    const { id } = socket;
+    console.log(`a user connected ${id}`);
+
+    socket.on("disconnect", () => {
+        console.log(`user disconnected ${id}`);
+    });
 });
 
 server.listen(port, () => console.log(`server running at port: ${port}`));
