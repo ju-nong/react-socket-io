@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { io } from "socket.io-client";
 
 function App() {
-    const socket = io("http://localhost:5000");
+    useEffect(() => {
+        const socket = io("http://localhost:5000");
 
-    console.log(socket);
+        console.log(socket);
+
+        return () => {
+            socket.disconnect();
+        };
+    });
 
     return (
         <>
