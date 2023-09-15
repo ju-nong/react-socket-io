@@ -10,7 +10,7 @@ const app = express();
 const server = createServer(app);
 
 // Vercel의 기본 포트는 80 or 443
-const port = 80;
+const port = 443;
 
 const io = new Server(server, {
     cors: {
