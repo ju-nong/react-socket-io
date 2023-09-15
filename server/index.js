@@ -8,7 +8,9 @@ const { Server } = require("socket.io");
 
 const app = express();
 const server = createServer(app);
-const port = 5000;
+
+// Vercel의 기본 포트는 80 or 443
+const port = 80;
 
 const io = new Server(server, {
     cors: {
