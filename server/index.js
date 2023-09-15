@@ -5,8 +5,10 @@
 const express = require("express");
 const { createServer } = require("node:http");
 const { Server } = require("socket.io");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
 const server = createServer(app);
 
 // Vercel의 기본 포트는 80 or 443
@@ -14,7 +16,7 @@ const port = 443;
 
 const io = new Server(server, {
     cors: {
-        origin: "*",
+        origin: "https://react-socket-io-client.vercel.app/",
         methods: ["GET", "POST"],
     },
 });
