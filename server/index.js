@@ -15,9 +15,9 @@ const io = new Server(server, {
 
 const chat = [];
 
-// app.get("/", (request, response) =>
-//     response.json({ path: "/", data: "Hello World!" }),
-// );
+app.get("/", (request, response) =>
+    response.json({ path: "/", data: "Hello World!" }),
+);
 
 io.on("connection", (socket) => {
     const { id } = socket; // Socket에 고유 ID
@@ -46,3 +46,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(port, () => console.log(`server running at port: ${port}`));
+
+export { app };
