@@ -1,6 +1,10 @@
-import express from "express";
-import { createServer } from "node:http";
-import { Server } from "socket.io";
+// import express from "express";
+// import { createServer } from "node:http";
+// import { Server } from "socket.io";
+
+const express = require("express");
+const { createServer } = require("node:http");
+const { Server } = require("socket.io");
 
 const app = express();
 const server = createServer(app);
@@ -47,4 +51,5 @@ io.on("connection", (socket) => {
 
 server.listen(port, () => console.log(`server running at port: ${port}`));
 
-export { app };
+module.exports = server;
+// export { server };
