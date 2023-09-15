@@ -11,8 +11,7 @@ const app = express();
 app.use(cors());
 const server = createServer(app);
 
-// Vercel의 기본 포트는 80 or 443
-// const port = 443;
+const port = 5000;
 
 const io = new Server(server, {
     cors: {
@@ -53,7 +52,7 @@ io.on("connection", (socket) => {
     socket.emit("RESPONSE MESSAGE", chat);
 });
 
-// server.listen(port, () => console.log(`server running at port: ${port}`));
+server.listen(port, () => console.log(`server running at port: ${port}`));
 
 module.exports = server;
 // export { server };
