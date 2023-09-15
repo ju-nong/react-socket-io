@@ -16,7 +16,7 @@ const port = 443;
 
 const io = new Server(server, {
     cors: {
-        origin: "https://react-socket-io-client.vercel.app/",
+        origin: "https://react-socket-io-client.vercel.app",
         methods: ["GET", "POST"],
     },
 });
